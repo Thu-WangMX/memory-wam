@@ -1,0 +1,16 @@
+train:
+  _target_: fastwam.datasets.robomme.RoboMMEHeliosDataset
+  root: ${oc.env:ROBOMME_DATA_ROOT}
+  prepared_root: ${oc.env:ROBOMME_HELIOS_PREPARED}
+  full_kv_cache_path: ${oc.env:ROBOMME_HELIOS_LATENTS}
+  tasks: [all]
+  history_sizes: ${model.helios_config.history_sizes}
+  anchor_frames: ${model.helios_config.anchor_frames}
+  anchor_mode: ${oc.select:model.helios_config.anchor_mode,global_first2}
+  view_layout: ${oc.select:model.helios_config.view_layout,legacy}
+  episode_indices: null
+  task_balanced: true
+  sample_stride: ${oc.decode:${oc.env:ROBOMME_SAMPLE_STRIDE,16}}
+  dense_latents_path: ${oc.env:ROBOMME_DENSE_LATENTS,null}
+  pretrained_norm_stats: ${oc.env:ROBOMME_HELIOS_PREPARED}/dataset_stats.json
+val: null

@@ -1,0 +1,6 @@
+defaults:
+  - robomme_helios
+  - _self_
+train:
+  _target_: fastwam.datasets.robomme_past_action.RoboMMEPastActionDataset
+  dreamdojo_labels_root: ${oc.env:ROBOMME_DREAMDOJO_LABELS,/mnt/vepfs01/output/spidy.wang/runtime-robomme/dreamdojo_labels_v1/cache/head_wrist64_stride1}

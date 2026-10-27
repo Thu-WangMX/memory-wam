@@ -1,0 +1,8 @@
+# @package _global_
+defaults:
+  - robomme_helios_pastfuture32_flow
+  - _self_
+model:
+  helios_config:
+    memory_variant: long99_less_temporal
+    patch_long: [2, 8, 8]

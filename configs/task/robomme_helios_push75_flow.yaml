@@ -1,0 +1,19 @@
+# @package _global_
+defaults:
+  - robomme_helios_pastfuture32_flow
+  - _self_
+model:
+  helios_config:
+    memory_variant: multiscale_long75
+    history_sizes: [72, 2, 1]
+    anchor_mode: demo_execution_first
+    history_padding: compact
+    view_layout: two_view_horizontal
+    prediction_horizon: 32
+    past_action:
+      source_history_slots: 75
+      past_query_slots: 32
+data:
+  train:
+    sample_stride: 1
+    past_query_slots: ${model.helios_config.past_action.past_query_slots}

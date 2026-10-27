@@ -1,0 +1,16 @@
+train:
+  _target_: fastwam.datasets.robodojo.RoboDojoHeliosDataset
+  root: ${oc.env:ROBODOJO_DATA_ROOT}
+  prepared_root: ${oc.env:ROBODOJO_HELIOS_PREPARED}
+  full_kv_cache_path: ${oc.env:ROBODOJO_HELIOS_LATENTS}
+  tasks: [cover_blocks, match_and_pick_from_conveyor, swap_blocks, swap_T, press_by_number, imitate_sorting_sequence]
+  split: train
+  val_fraction: 0.01
+  split_seed: 42
+  history_sizes: ${model.helios_config.history_sizes}
+  anchor_frames: ${model.helios_config.anchor_frames}
+  episode_indices: null
+  pretrained_norm_stats: ${oc.env:ROBODOJO_HELIOS_PREPARED}/dataset_stats.json
+# Generic FastWAM validation only sees a current frame, so it is disabled for
+# this history-conditioned recipe. Use the dedicated history-aware smoke/eval.
+val: null

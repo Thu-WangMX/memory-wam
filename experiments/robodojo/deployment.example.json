@@ -1,0 +1,10 @@
+{
+  "env_cfg_type": "arx_x5",
+  "action_type": "joint",
+  "config_path": "/path/to/robodojo-training-run/config.yaml",
+  "checkpoint_path": "/path/to/robodojo-training-run/checkpoints/weights/step_002500.pt",
+  "prepared_root": "/mnt/vepfs01/output/spidy.wang/runtime-robodojo/prepared-anchor-helios",
+  "device": "cuda:0",
+  "num_inference_steps": 50,
+  "seed": 42
+}

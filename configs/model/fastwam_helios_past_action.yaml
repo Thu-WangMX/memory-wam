@@ -1,0 +1,11 @@
+defaults:
+  - fastwam_helios
+  - _self_
+helios_config:
+  memory_variant: multiscale_long99
+  history_sizes: [96, 2, 1]
+  past_action:
+    enabled: true
+    loss_weight: 0.1
+    action_reads_past: true
+    label_contract: null  # Bound to verified training labels by validate_recipe.

@@ -1,0 +1,40 @@
+# @package _global_
+defaults:
+  - override /data: robomme_helios
+  - override /model: fastwam_helios
+  - _self_
+batch_size: 1
+num_workers: 4
+persistent_workers: true
+continuous_dataloader: true
+prefetch_factor: 2
+gradient_accumulation_steps: 1
+learning_rate: 1.0e-4
+lr_scheduler_type: cosine
+warmup_ratio: 0.05
+weight_decay: 1.0e-2
+max_grad_norm: 1.0
+max_steps: 20000
+save_every: 2500
+save_training_state: true
+save_final_checkpoint: true
+eval_every: 0
+native_cache_train_mode: full
+hydra:
+  run:
+    dir: ${output_dir}
+  job_logging:
+    handlers:
+      file:
+        filename: ${hydra.runtime.output_dir}/hydra.rank${oc.env:RANK,0}.log
+model:
+  proprio_dim: 8
+  video_dit_config:
+    action_dim: 8
+  action_dit_config:
+    action_dim: 8
+  helios_config:
+    anchor_mode: demo_execution_first
+    backbone_init_checkpoint: null
+    observation_contract: robomme_anchor_helios_phase_v1
+    data_fingerprint: null

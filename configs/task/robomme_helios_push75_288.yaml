@@ -1,0 +1,12 @@
+# @package _global_
+defaults:
+  - robomme_helios_push75_flow
+  - _self_
+max_steps: 50000
+learning_rate: 1.0e-4
+warmup_ratio: 0.05
+min_learning_rate: 1.0e-6
+model:
+  helios_config:
+    memory_variant: long75_less_temporal
+    patch_long: [2, 8, 8]

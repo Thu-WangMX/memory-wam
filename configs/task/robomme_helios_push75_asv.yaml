@@ -1,0 +1,13 @@
+# @package _global_
+defaults:
+  - robomme_helios_push75_flow
+  - _self_
+max_steps: 20000
+learning_rate: 2.0e-5
+warmup_ratio: 0.015
+min_learning_rate: 1.0e-6
+model:
+  helios_config:
+    action_video_attention: asv
+    asv_init_checkpoint: null
+    asv_source_data_fingerprint: null

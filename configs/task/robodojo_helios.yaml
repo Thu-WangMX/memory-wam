@@ -1,0 +1,30 @@
+# @package _global_
+# Anchor-Helios on RoboDojo; this preserves the RMBench model/time contract.
+# This is a new recipe, not a reproduction of StarWAM's 32/24 baseline.
+defaults:
+  - override /data: robodojo_helios
+  - override /model: fastwam_helios
+  - _self_
+batch_size: 1
+num_workers: 4
+gradient_accumulation_steps: 1
+learning_rate: 1.0e-4
+lr_scheduler_type: cosine
+warmup_ratio: 0.05
+weight_decay: 1.0e-2
+max_grad_norm: 1.0
+max_steps: 20000
+num_epochs: 1
+save_every: 2500
+save_training_state: true
+save_final_checkpoint: true
+eval_every: 0
+native_cache_train_mode: full
+model:
+  proprio_dim: 14
+  video_dit_config:
+    action_dim: 14
+  action_dit_config:
+    action_dim: 14
+  helios_config:
+    backbone_init_checkpoint: null

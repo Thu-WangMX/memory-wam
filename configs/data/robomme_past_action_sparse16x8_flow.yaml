@@ -1,0 +1,5 @@
+defaults:
+  - robomme_past_action_flow
+  - _self_
+train:
+  _target_: fastwam.datasets.robomme_past_action.RoboMMEPastActionSparse16x8FlowDataset

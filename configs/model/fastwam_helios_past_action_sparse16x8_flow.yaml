@@ -1,0 +1,6 @@
+defaults:
+  - fastwam_helios_past_action_flow
+  - _self_
+helios_config:
+  past_action:
+    target_mode: uniform16_half8

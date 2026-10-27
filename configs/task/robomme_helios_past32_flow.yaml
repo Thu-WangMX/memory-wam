@@ -1,0 +1,12 @@
+# @package _global_
+defaults:
+  - robomme_helios_past_action_sparse16x8_flow
+  - _self_
+model:
+  helios_config:
+    prediction_horizon: 32
+    memory_variant: multiscale_long99
+    history_sizes: [96, 2, 1]
+data:
+  train:
+    prediction_horizon: ${model.helios_config.prediction_horizon}

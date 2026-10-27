@@ -1,0 +1,6 @@
+# @package _global_
+defaults:
+  - robomme_helios_past_action
+  - override /data: robomme_past_action_block16
+  - override /model: fastwam_helios_past_action_block16
+  - _self_

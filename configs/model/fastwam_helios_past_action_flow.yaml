@@ -1,0 +1,6 @@
+defaults:
+  - fastwam_helios_past_action_block16
+  - _self_
+helios_config:
+  past_action:
+    learning_mode: flow_matching

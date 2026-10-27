@@ -1,0 +1,6 @@
+defaults:
+  - fastwam_helios_past_action
+  - _self_
+helios_config:
+  past_action:
+    target_mode: ordered_interval16

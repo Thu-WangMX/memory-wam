@@ -1,0 +1,6 @@
+defaults:
+  - rmbench_helios
+  - _self_
+train:
+  _target_: fastwam.datasets.lerobot.future_mask_dataset.FutureMaskHeliosDataset
+  future_mask_cache_path: ${oc.env:FUTURE_MASK_CACHE}

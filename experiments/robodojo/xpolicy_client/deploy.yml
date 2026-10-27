@@ -1,0 +1,13 @@
+policy_name: FastWAMAnchorHelios
+protocol: ws
+host: localhost
+port: null
+bench_name: RoboDojo
+task_name: null
+ckpt_name: null
+env_cfg_type: arx_x5
+seed: 42
+action_type: joint
+gpu_id: null
+eval_batch: false
+request_timeout_s: 600

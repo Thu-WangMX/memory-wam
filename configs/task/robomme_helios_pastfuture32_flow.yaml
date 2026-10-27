@@ -1,0 +1,12 @@
+# @package _global_
+defaults:
+  - robomme_helios_past32_flow
+  - _self_
+model:
+  helios_config:
+    past_action:
+      target_mode: past16_future2_half8
+      future_loss_weight: 0.1
+data:
+  train:
+    _target_: fastwam.datasets.robomme_past_future.RoboMMEPastFutureActionDataset
